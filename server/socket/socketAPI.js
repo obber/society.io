@@ -42,10 +42,11 @@ SocketAPI.prototype.on = function(event, cb, auth) {
 	  console.log('ON:'.bgMagenta,'-->'.magenta, event);
   }
 	function authenticate(data) {
-    firebase.authWithCustomToken(data.token, function(err, authData) {
-      if(err) {this.emit('err');}
-      cb(data);
-    });
+    // firebase.authWithCustomToken(data.token, function(err, authData) {
+    //   if(err) {this.emit('err');}
+    //   cb(data);
+    // });
+    cb(data);
   }
 	this.listeners[event]=this.socketId;
 };
